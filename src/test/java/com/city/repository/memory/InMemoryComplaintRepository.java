@@ -6,7 +6,6 @@ import com.city.repository.ComplaintRepository;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
-
 public class InMemoryComplaintRepository implements ComplaintRepository {
     private final Map<String, Complaint> store = new ConcurrentHashMap<>();
     public Optional<Complaint> findById(String id) { return Optional.ofNullable(store.get(id)); }

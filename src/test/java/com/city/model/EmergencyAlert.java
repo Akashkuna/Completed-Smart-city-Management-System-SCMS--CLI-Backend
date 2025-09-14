@@ -1,10 +1,8 @@
 package com.city.model;
-
 import com.city.model.enums.AlertStatus;
 import com.city.model.enums.EmergencyType;
 import com.city.model.enums.PriorityLevel;
 import java.time.LocalDateTime;
-
 public class EmergencyAlert {
     private final String alertId;
     private final EmergencyType type;
@@ -12,7 +10,6 @@ public class EmergencyAlert {
     private final PriorityLevel severity;
     private final LocalDateTime timestamp = LocalDateTime.now();
     private AlertStatus status = AlertStatus.NEW;
-
     public EmergencyAlert(String alertId, EmergencyType type, String location, PriorityLevel severity) {
         if (alertId == null || alertId.isBlank()) throw new IllegalArgumentException("alertId required");
         if (type == null) throw new IllegalArgumentException("type required");
@@ -23,7 +20,6 @@ public class EmergencyAlert {
         this.location = location;
         this.severity = severity;
     }
-
     public String getAlertId() { return alertId; }
     public EmergencyType getType() { return type; }
     public String getLocation() { return location; }
